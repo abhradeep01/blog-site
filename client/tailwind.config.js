@@ -3,9 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
     screens:{
-      'x-sm':{'min':'0px',"max":"480px"},
-      "mid":{'min':"0px",'max':"700px"},
-      'tablet-lg':{min:'0px',max:'1024px'}
+      'x-sm':{'min':'0px','max':'480px'},
+      'tablet-sm':{'min':'480px','max':'700px'},
+      'tablet-lg':{'min':'700px','max':'1024px'}
     },
     extend: {},
   },
