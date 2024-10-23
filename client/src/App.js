@@ -28,8 +28,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route index path='/' element={<Home/>}/>
-          <Route index path='/blogpage' element={<BlogPage/>}/>
-          <Route index path='/write' element={<Write/>}/>
+          <Route path='/blogpage' element={<BlogPage/>}/>
+          <Route path='/write' element={<Write/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Route>
       </Routes>
