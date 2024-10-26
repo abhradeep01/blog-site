@@ -1,12 +1,12 @@
 import React from 'react';
 import SuggestPost from './SuggestPost';
 
-function BlogPage({userImg,userName,daysBeforeUpdated,blogImg,blogTitle,blogDescribe=new Array([]),randomBlogs = new Array([])}) {
+function BlogPage({userImg,userName,daysBeforeUpdated,blogImg,blogTitle,blogDescribe = new Array([]),randomBlogs = new Array([])}) {
   return (
     <div className="w-[80%] flex flex-row gap-8 m-28 tablet-lg:w-[90%] x-sm:w-[95%] tablet-sm:flex-col x-sm:flex-col">
         <div className="w-[75%] flex flex-col gap-6 tablet-sm:w-[100%] x-sm:w-full">
             <div className='w-full'>
-                <img src={blogImg} alt="" className='w-full' />
+                <img src={blogImg} alt="" className='w-full'/>
             </div>
             <div className="w-full flex flex-row gap-2">
                 <div className="w-14">

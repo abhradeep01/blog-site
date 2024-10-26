@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../icons/logo.png';
 function Footer() {
   return (
-    <div className="w-[80%] flex flex-col gap-3 items-center bg-cyan-200 py-4 tablet-lg:w-[90%] x-sm:w-[95%]">
+    <div className="w-[100%] flex flex-col gap-3 items-center bg-cyan-200 py-4">
         <div className="w-24">
             <img src={logo} alt="" />
         </div>
@@ -15,4 +15,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default Footer;

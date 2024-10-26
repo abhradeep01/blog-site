@@ -25,15 +25,15 @@ function Write() {
     }
     console.log(img);
   return (
-    <div className="w-[80%] flex flex-row justify-between tablet-lg:w-[90%] tablet-sm:flex-col tablet-sm:gap-[4rem] x-sm:w-[95%] x-sm:flex-col x-sm:gap-[4rem] m-28 ">
-        <div className="w-[70%] flex flex-col gap-[2rem] tablet-lg:w-[65%] tablet-sm:flex-col tablet-sm:w-full x-sm:w-full">
+    <div className="w-[80%] flex flex-row justify-between tablet-lg:w-[90%] tablet-sm:w-[90%] border tablet-sm:flex-col tablet-sm:gap-[4rem] x-sm:w-[95%] x-sm:flex-col x-sm:gap-[4rem] m-28 ">
+        <div className="w-[70%] flex flex-col gap-[2rem] tablet-lg:w-[65%] tablet-sm:w-full tablet-sm:flex-col x-sm:w-full">
             <input type="text" placeholder='Title' value={title} onChange={(e)=>setTitle(e.target.value)} className='w-full focus:outline-none border border-gray-300 h-[2.25rem] p-1' />
             <div>
                 <ReactQuill theme='snow' value={description} onChange={setDescription} className='h-[225px]' />
             </div>
         </div>
         <div className="w-[25%] flex flex-col gap-5 tablet-lg:w-[30%] tablet-sm:w-[100%] tablet-sm:flex-row tablet-sm:justify-around x-sm:w-full x-sm:flex-row x-sm:justify-between">
-            <div className="w-full flex flex-col gap-2 border border-gray-300 p-1 x-sm:w-[48%] x-sm:justify-around">
+            <div className="w-full flex flex-col gap-2 border border-gray-300 p-1 tablet-sm:w-[48%] x-sm:w-[48%] x-sm:justify-around">
                 <div>
                     <h2 className="text-xl font-bold">
                         Publish
@@ -58,7 +58,7 @@ function Write() {
                     </button>
                 </div>
             </div>
-            <div className="w-full flex flex-col gap-2 border border-gray-300 p-1 x-sm:w-[48%]">
+            <div className="w-full flex flex-col gap-2 border border-gray-300 p-1 tablet-sm:w-[48%] x-sm:w-[48%]">
                 <div>
                     <h2 className="text-xl font-bold">
                         Category
@@ -67,7 +67,7 @@ function Write() {
                 {
                     data.navContent.map((item,index)=>{
                         return(
-                            <div className='flex flex-row gap-0.5'>
+                            <div className='flex flex-row gap-0.5' key={index}>
                                 <input type="radio" name="" id={item.path} />
                                 <label htmlFor={item.path} className="">{item.text}</label>
                             </div>

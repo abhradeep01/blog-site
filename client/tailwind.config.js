@@ -5,7 +5,7 @@ module.exports = {
     screens:{
       'x-sm':{'min':'0px','max':'480px'},
       'tablet-sm':{'min':'480px','max':'700px'},
-      'tablet-lg':{'min':'700px','max':'1024px'}
+      'tablet-lg':{'min':'701px','max':'1024px'}
     },
     extend: {},
   },
