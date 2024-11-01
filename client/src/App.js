@@ -5,6 +5,8 @@ import NotFound from './components/NotFound';
 import Main from './pages/Main';
 import BlogPage from './components/BlogPage';
 import Write from './components/Write';
+import LogIn from './components/LogIn';
+import Register from './components/Register';
 
 
 const Layout = () =>{
@@ -32,6 +34,8 @@ function App() {
           <Route path='/write' element={<Write/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Route>
+        <Route path='/login' element={<LogIn/>}/>
+        <Route path='/register' element={<Register/>}/>
       </Routes>
     </>
   );
