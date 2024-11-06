@@ -39,7 +39,7 @@ function BlogPost({ blogContent = new Array([]), blogImg, blogKey, blogTitle }) 
     <div className={`w-full flex ${even? 'flex-row-reverse' : 'flex-row'} gap-8 x-sm:flex-col-reverse x-sm:gap-2`}>
       <div className="w-1/2 flex flex-col gap-2 p-2 x-sm:w-full">
         <div>
-          <h3 className="text-3xl font-bold capitalize text-cyan-500">
+          <h3 className="text-3xl font-bold capitalize text-cyan-600">
             {blogTitle}
           </h3>
         </div>
