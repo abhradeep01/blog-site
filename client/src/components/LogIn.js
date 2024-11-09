@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { EyeClose, EyeOpen } from '../icons/icons';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { AuthContext } from '../context/authContext';
 
 function LogIn() {
     //password show or not show
@@ -15,6 +15,10 @@ function LogIn() {
     const [err,setErr] = useState('');
     //for page navigation
     const navigate = useNavigate();
+    //const login context
+    const {login} = useContext(AuthContext);
+
+
     //handle change on input field
     const handleOnChange = (e) => {
         setInputs(prev=>({...prev,[e.target.name]:e.target.value}))
@@ -25,7 +29,7 @@ function LogIn() {
         e.preventDefault();
         try{
             if(inputs.username && inputs.password){
-                await axios.post("/auth/login",inputs);
+                await login(inputs);
                 navigate('/');
                 setInputs({
                     username:"",

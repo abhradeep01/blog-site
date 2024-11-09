@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../icons/logo.png';
 import data from '../data/content.json';
 import { Link } from 'react-router-dom';
 import { Menu } from '../icons/icons';
+import { AuthContext } from '../context/authContext';
 function NavBar() {
     const [tapMenu,setTapMenu] = useState(false);
-
+    const {logout,currentUser} = useContext(AuthContext);
 
   return (
     <>
@@ -22,10 +23,15 @@ function NavBar() {
                     </div>
                 ))}
                 <div>
-                    <Link to={'/logout'} className='text-lg font-medium'>
-                        Logout
-                    </Link>
+                    <h5 className="text-base font-semibold text-red-500">
+                        {currentUser?.user}
+                    </h5>
                 </div>
+                {
+                    currentUser?
+                    <Link to={'/logout'} className='text-[0.95rem] text-green-700 font-semibold' children={'logout'} onClick={logout}/>:
+                    <Link to={'/login'} className='text-base font-semibold' children='login'/>
+                }
                 <div className="w-14 h-14 rounded-full flex items-center justify-center bg-cyan-500 hover:text-white">
                     <Link to='/write' children='Write' className='text-base font-semibold' />
                 </div>
@@ -36,14 +42,22 @@ function NavBar() {
                         <Link to='/write' children='Write' className='text-[0.95rem] font-semibold hover:text-cyan-950' />
                     </div>
                 </div>
-                <Link to={'/logout'} className='text-[0.95rem] font-semibold'>
-                    Logout
-                </Link>
+                <div>
+                    <h5 className="text-base font-semibold text-red-500">
+                        {currentUser?.user}
+                    </h5>
+                </div>
+                {
+                    currentUser?
+                    <Link to={'/logout'} className='text-[0.95rem] text-green-700 font-semibold' children={'logout'} onClick={logout}/>:
+                    <Link to={'/login'} className='text-base font-semibold' children='login'/>
+                }
                 <button onClick={()=>setTapMenu(!tapMenu)}>
                     <Menu className={``}  />
                 </button>
             </div>
         </div>
+        {/* for phone screen  */}
         <div className={`${tapMenu?'fixed z-30 top-[3.75rem] right-3 flex flex-col gap-0.5 bg-slate-600 p-1 rounded-sm':'hidden'}`}>
             {data.navContent.map((item,index)=>(
                 <div>
