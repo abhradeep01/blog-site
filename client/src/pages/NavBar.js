@@ -8,6 +8,7 @@ function NavBar() {
     const [tapMenu,setTapMenu] = useState(false);
     const {logout,currentUser} = useContext(AuthContext);
 
+
   return (
     <>
         <div className="w-[100%] h-24 fixed right-0 left-0 top-0 z-20 flex flex-row justify-around items-center bg-slate-200 tablet-sm:justify-between tablet-sm:px-2 x-sm:justify-between x-sm:px-2">
@@ -24,7 +25,7 @@ function NavBar() {
                 ))}
                 <div>
                     <h5 className="text-base font-semibold text-red-500">
-                        {currentUser?.user}
+                        {currentUser?.username}
                     </h5>
                 </div>
                 {
@@ -49,11 +50,11 @@ function NavBar() {
                 </div>
                 {
                     currentUser?
-                    <Link to={'/logout'} className='text-[0.95rem] text-green-700 font-semibold' children={'logout'} onClick={logout}/>:
+                    <Link to={'/logout'} className='text-base text-green-700 font-semibold' children={'logout'} onClick={logout}/>:
                     <Link to={'/login'} className='text-base font-semibold' children='login'/>
                 }
                 <button onClick={()=>setTapMenu(!tapMenu)}>
-                    <Menu className={``}  />
+                    <Menu/>
                 </button>
             </div>
         </div>
