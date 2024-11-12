@@ -25,7 +25,7 @@ function BlogPost({ blogContent = new Array([]), blogImg, blogKey, blogTitle }) 
 
   useEffect(() => {
     //paragraph which is shown as intro of a blog
-    const str = String(blogContent[0]);
+    const str = String(blogContent);
 
     // Set the default blog content
     setDefBlog(str.substring(0,bufferSize));
