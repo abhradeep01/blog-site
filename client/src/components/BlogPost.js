@@ -2,26 +2,13 @@ import React, { useEffect, useState, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { Visit } from '../icons/icons';
 
-//vlog visit button
-const VisitButton = () =>{
-  return(
-    <button className="w-fit px-1 py-0.5 bg-blue-500 text-white rounded-sm">
-      <Link to={'/blogpage'} className='flex flex-row text-base font-semibold'>
-        Vlog Page <span className='self-end'>
-          <Visit/>
-        </span>
-      </Link>
-    </button>
-  )
-}
-
-function BlogPost({ blogContent = new Array([]), blogImg, blogKey, blogTitle }) {
+function BlogPost({ blogContent = new Array([]), blogImg, blogKey, blogTitle ,id}) {
   const [showBlog, setShowBlog] = useState(false);
   const [defBlog, setDefBlog] = useState('');
   const [even,isEven] = useState(false);
 
   //size of the str which is shown side of the blog image
-  const bufferSize = 550;
+  const bufferSize = 400;
 
   useEffect(() => {
     //paragraph which is shown as intro of a blog
@@ -54,7 +41,14 @@ function BlogPost({ blogContent = new Array([]), blogImg, blogKey, blogTitle }) 
         </div>
         <div>
           <h3 className="text-base font-semibold capitalize text-red-600">
-            for more visit page: <VisitButton/>
+            for more visit page: 
+            <button className="w-fit px-1 py-0.5 bg-blue-500 text-white rounded-sm">
+              <Link to={`/posts/${id}`} className='flex flex-row text-base font-semibold'>
+                Vlog Page <span className='self-end'>
+                  <Visit/>
+                </span>
+               </Link>
+            </button>
           </h3>
         </div>
       </div>

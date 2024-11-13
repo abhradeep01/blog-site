@@ -1,38 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SuggestPost from './SuggestPost';
+import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import moment from 'moment';
 
-function BlogPage({userImg,userName,daysBeforeUpdated,blogImg,blogTitle,blogDescribe = new Array([]),randomBlogs = new Array([])}) {
+function BlogPage() {
+    //for post info store
+    const [post,setPost] = useState({});
+    //url location
+    const location = useLocation();
+    //for page navigation
+    // const navigation = useNavigate();
+
+    const postId = location.pathname.split('/')[2];
+    useEffect(()=>{
+        const fetchData = async () =>{
+            try{
+                const res = await axios.get(`/posts/${postId}`);
+                setPost(res.data);
+            }catch(err){
+                console.log(err);;
+            }
+        }
+        fetchData();
+    },[postId])
+
   return (
     <div className="w-[80%] flex flex-row gap-8 m-28 tablet-lg:w-[90%] x-sm:w-[95%] tablet-sm:flex-col x-sm:flex-col">
         <div className="w-[75%] flex flex-col gap-6 tablet-sm:w-[100%] x-sm:w-full">
             <div className='w-full'>
-                <img src={blogImg} alt="" className='w-full'/>
+                <img src={post.img} alt="" className='w-full'/>
             </div>
             <div className="w-full flex flex-row gap-2">
                 <div className="w-14">
-                    <img src={userImg} alt="" className='w-full rounded-full' />
+                    <img src={post.userImg} alt="" className='w-full rounded-full' />
                 </div>
                 <div className="flex flex-col justify-around">
                     <div>
-                        <h3 className="text-[1.1rem] font-semibold">
-                            {userName}
+                        <h3 className="text-[1.1rem] font-semibold capitalize">
+                            {post.username}
                         </h3>
                     </div>
                     <div>
                         <h4 className="text-base font-medium">
-                            {"Posted "+daysBeforeUpdated+ " ago"}
+                            posted {moment(post.date).fromNow()}
                         </h4>
                     </div>
                 </div>
             </div>
             <div>
-                <h2 className="text-3xl font-extrabold">
-                    {blogTitle}
+                <h2 className="text-3xl font-extrabold text-red-500">
+                    {post.title}
                 </h2>
             </div>
-            <div className="w-full flex flex-col gap-6">
-                {
-                    blogDescribe.map((item,index)=>{
+            <div className="w-full flex flex-col gap-6 text-lg">
+                {/* {
+                    post.describtion.map((item,index)=>{
                         return(
                             <div>
                                 <p className="text-lg font-medium">
@@ -41,7 +64,8 @@ function BlogPage({userImg,userName,daysBeforeUpdated,blogImg,blogTitle,blogDesc
                             </div>
                         )
                     })
-                }
+                } */}
+                {post.describtion}
             </div>
         </div>
         <div className="w-[25%] flex flex-col gap-5 tablet-sm:w-[100%] x-sm:w-full">
@@ -51,15 +75,12 @@ function BlogPage({userImg,userName,daysBeforeUpdated,blogImg,blogTitle,blogDesc
                 </h5>
             </div>
             <div className="w-full flex flex-col gap-3 tablet-sm:flex-row tablet-sm:flex-wrap tablet-sm:justify-between x-sm:flex-row x-sm:flex-wrap x-sm:justify-between">
-                {randomBlogs.map((item,index)=>{
-                    return(
-                        <SuggestPost
-                            key={index}
-                            BlogTitle={item.title}
-                            blogImg={item.blogImg}
-                        />
-                    )
-                })}
+                <SuggestPost
+                    type={{
+                        category:post.category,
+                        id:post.id
+                    }}
+                />
             </div>
         </div>
     </div>

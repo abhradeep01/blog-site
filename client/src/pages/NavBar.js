@@ -7,27 +7,27 @@ import { AuthContext } from '../context/authContext';
 const navContent=[
     {
         text:'Art',
-        path:'/art'
+        path:'/?category=art'
     },
     {
         text:'Science',
-        path:'/science'
+        path:'/?category=science'
     },
     {
         text:'Technology',
-        path:'/technology'
+        path:'/?category=technology'
     },
     {
         text:'Cinema',
-        path:'/cinema'
+        path:'/?category=cinema'
     },
     {
         text:"Design",
-        path:'/design'
+        path:'/?category=design'
     },
     {
         text:'Food',
-        path:'/food'
+        path:'/?category=food'
     }
 ]
 function NavBar() {

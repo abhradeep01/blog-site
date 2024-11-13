@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path={'/'} element={<Layout/>}>
           <Route index path='/' element={<Home/>}/>
-          <Route path='/blogpage' element={<BlogPage/>}/>
+          <Route path='/posts/:id' element={<BlogPage/>}/>
           <Route path='/write' element={<Write/>}/>
           <Route path='/*' element={<NotFound/>}/>
         </Route>:
