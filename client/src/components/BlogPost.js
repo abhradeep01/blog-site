@@ -53,7 +53,7 @@ function BlogPost({ blogContent = new Array([]), blogImg, blogKey, blogTitle ,id
         </div>
       </div>
       <div className="w-1/2 flex items-center justify-center p-2 x-sm:w-full">
-        <img src={blogImg} alt="Blog" />
+        <img src={blogImg} alt="Blog" width={640} height={360} className='aspect-[16/9]' />
       </div>
     </div>
   );
