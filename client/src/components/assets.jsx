@@ -1,0 +1,22 @@
+export const navcontent = [
+    {
+        text:'food',
+        path:'/?category=food'
+    },
+    {
+        text:'culture',
+        path:'/?category=culture'
+    },
+    {
+        text:'art',
+        path:'/?category=art'
+    },
+    {
+        text:'science',
+        path:'/?category=science'
+    },
+    {
+        text:'technology',
+        path:'/?category=technology'
+    }
+];

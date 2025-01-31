@@ -1,0 +1,67 @@
+.navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height: 4.75rem;
+    background-color: rgb(224, 224, 224);
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    @media screen and (max-width: 1024px) {
+        justify-content: space-between;
+        padding:0 5vw;
+    }
+    @media screen and (max-width: 768px) {
+        justify-content: space-between;
+        padding:0  3vw;
+    }
+    @media screen and (max-width: 480px) {
+        padding:0 1vw;
+    }
+    img{
+        width: 4.3rem;
+    }
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        .nav-cat{
+            font-size: 1rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: black;
+            &:hover{
+                color: rgb(85, 84, 84);
+            }
+            @media screen and (max-width: 1024px) {
+                &:hover{
+                    color: black;
+                }
+            }
+        }
+    }
+    .menu{
+        display: none;
+    }
+}
+
+// for ipad screen
+@media (max-width: 1024px) {
+    .navbar{
+        .navigation{
+            display: none;
+        }
+        .menu{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+//for dropdown menu
+.dropdown{
+    position: relative;   
+}
+.menu_show{
+    position: absolute;
+    display: flex;
+    right:1rem;
+    flex-direction: column;
+    border-radius: 0.125rem;
+    padding:0.125rem;
+    background-color: rgb(204, 203, 203);
+    transition: height 0.2s ease-in-out;
+    a{
+        text-transform:capitalize;
+        font-size:1rem;
+        font-weight:400;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-decoration:none;
+        color:black;
+        border-bottom: 1px solid white;
+        padding:0.25rem;
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+
+}
+.menu_hide{
+    display: none;
+}
+
+//for search menu
+.popup_search{
+    transition: width 0.2s ease-in-out;
+    width:20vw;
+    height:1.75rem;
+    &:focus{
+        outline:none;
+    }
+    @media screen and (max-width: 1024px) {
+      width:25vw;
+    }
+    @media screen and (max-width: 768px) {
+      width:35vw;
+    }
+    @media screen and (max-width: 480px) {
+        width:45vw;
+    }
+}
+

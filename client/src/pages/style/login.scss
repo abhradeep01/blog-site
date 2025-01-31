@@ -1,0 +1,82 @@
+//login page
+.login{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:teal;
+    .login-container{
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding:4rem 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        .form{
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            .header{
+                font-size:1.25rem;
+                font-weight:600;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: rgb(98, 161, 2);
+                margin: 0;
+                margin-bottom:0.75rem;
+            }
+            input[type="text"],input[type="password"]{
+                width:96.5%;
+                height:1.65rem;
+                &:focus{
+                    outline:none;
+                }
+            }
+            .password{
+                width: 100%;
+                position: relative;
+                input{
+                    width: 96.5%;
+                }
+                .icon{
+                    height:100%;
+                    position: absolute;
+                    top:0;
+                    right:0.25rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            p{
+                width:100%;
+                color: red;
+            }
+            button{
+                width:100%;
+                padding:0.25rem;
+                height: 1.75rem;
+                background-color: teal;
+                color: #fff;
+                font-size: 1rem;
+                font-weight: 500;
+                border: none;
+                border-radius: 0.125rem;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.9;
+                }
+            }
+        }
+        @media screen and (max-width: 480px) {
+            width: 95%;
+            .form{
+                width: 80%;
+            }
+        }
+    }
+}
+
