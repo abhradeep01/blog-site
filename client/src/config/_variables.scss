@@ -1,20 +1,19 @@
-//button color
-$btn-color:(
-    "primary":rgb(15, 112, 238),
-    "auth-btn":rgb(8, 170, 170),
-    "secondary":rgb(40, 163, 9)
-)
+// _colors.scss
+$btn-primary:rgb(11, 119, 243);
+$auth-btn:rgb(9, 174, 196);
+$secondary-btn-color:rgb(40, 163, 9);
+
+//text color
+$auth-header:rgb(16, 160, 160);
 
 //background color
-$bg-color(
-    'nav':rgb(214, 214, 214),
-    'auth':rgb(36, 141, 141),
-)
+$nav-color:rgb(231, 255, 249);
+$auth-color:rgb(11, 107, 107);
 
-//post colors
-$post(
-    'title':rgb(7, 194, 194),
-    'description':black
-)
+//post color
+$post-title:rgb(3, 172, 172);
+$post-description:black;
 
-
+//page color
+$page-title:rgb(197, 5, 5);
+$page-description:black;

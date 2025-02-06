@@ -12,10 +12,6 @@ function Post({id,title,img,description,iseven}) {
     const navigate = useNavigate();
     //reac more or not
     const [readMore, setReadMore] = React.useState(false);
-
-    React.useEffect(()=>{
-        console.log();
-    },[])
     
 
   return (

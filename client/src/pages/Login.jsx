@@ -1,7 +1,7 @@
 import React from 'react';
 import { apiClient } from '../config/axios';
 import '../pages/style/login.scss';
-import { Alert, IconButton } from '@mui/material';
+import { Alert, IconButton, InputAdornment, OutlinedInput } from '@mui/material';
 import { Close, Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from 'react-router';
 
@@ -57,21 +57,21 @@ function Login() {
                 <div>
                     <h2 className="header">Login</h2>
                 </div>
-                <input type="text" name='username' value={input.username} placeholder='username' onChange={handleChange}/>
-                <div className="password">
-                    <input type={showPassword?"text":'password'} placeholder='password' value={input.password} name='password' onChange={handleChange} />
-                    <div className="icon" onClick={()=>setShowPassword(!showPassword)}>
-                        {
-                            showPassword?
-                            <VisibilityOff fontSize='small'/>:
-                            <Visibility fontSize='small'/>
-                        }
-                    </div>
-                </div>
+                <OutlinedInput sx={{width:'100%',height:'2.5rem'}} type="text" name='username' value={input.username} placeholder='username' onChange={handleChange}/>
+                <OutlinedInput sx={{width:'100%',height:'2.5rem'}} name='password' value={input.password} placeholder='password' onChange={handleChange}
+                    type={showPassword?'text':'password'}
+                    endAdornment={
+                        <InputAdornment position='end'>
+                            <IconButton>
+                                {showPassword?<VisibilityOff fontSize='small'/>:<Visibility fontSize='small'/>}
+                            </IconButton>
+                        </InputAdornment>
+                    }
+                />
                 {/* error alert */}
                 <Alert severity='error' color='error' variant='standard' sx={error?{display:'flex',flexDirection:'row',alignItems:'center'}:{display:'none'}} action={
                     <IconButton onClick={()=>setError('')}>
-                        <Close color='warning'/>
+                        <Close color='error'/>
                     </IconButton>
                 }>
                     {error}

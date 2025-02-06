@@ -1,3 +1,5 @@
+@use '../../config/_variables' as *;
+
 //login page
 .login{
     width: 100vw;
@@ -5,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:teal;
+    background-color:$auth-color;
     .login-container{
         width: 400px;
         display: flex;
@@ -15,7 +17,7 @@
         padding:4rem 0;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         .form{
-            width: 75%;
+            width: 80%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -24,12 +26,12 @@
                 font-size:1.25rem;
                 font-weight:600;
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-                color: rgb(98, 161, 2);
+                color: $auth-header;
                 margin: 0;
-                margin-bottom:0.75rem;
+                margin-bottom:2rem;
             }
-            input[type="text"],input[type="password"]{
-                width:96.5%;
+            input{
+                width:100%;
                 height:1.65rem;
                 &:focus{
                     outline:none;
@@ -38,16 +40,16 @@
             .password{
                 width: 100%;
                 position: relative;
+                border:solid 1px;
                 input{
-                    width: 96.5%;
+                    width: 100%;
                 }
                 .icon{
-                    height:100%;
                     position: absolute;
+                    height: 100%;
                     top:0;
-                    right:0.25rem;
+                    right:0;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
                 }
             }
@@ -55,13 +57,13 @@
                 width:100%;
                 color: red;
             }
-            button{
+            .login-btn{
                 width:100%;
                 padding:0.25rem;
                 height: 1.75rem;
-                background-color: teal;
+                background-color: $auth-btn ;
                 color: #fff;
-                font-size: 1rem;
+                font-size: 0.9rem;
                 font-weight: 500;
                 border: none;
                 border-radius: 0.125rem;
